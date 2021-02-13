@@ -13,4 +13,10 @@ recognize and spell 'L', 'U', 'C', 'K'
 - skin detection to recognize human hand
 - template matching to recognize letters
 
+## Team Members:
+- Mahir
+- Neel
+- Sherry
+- Yiwen
+
 #### feel free to edit ######
