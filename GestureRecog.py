@@ -104,7 +104,9 @@ if __name__ == "__main__":
     fgbg = cv2.createBackgroundSubtractorKNN()
     
     fourcc = cv2.VideoWriter_fourcc(*'MPEG')
-    out = cv2.VideoWriter('output.avi', fourcc, 9.0, (640, 480))
+    # goto line 162
+    # out = cv2.VideoWriter('output.avi', fourcc, 9.0, (fW, fH))
+    out = cv2.VideoWriter('combined.avi', fourcc, 9.0, (fW*3//2, fH))
 
     while(True):
         start = int(round(time.time() * 1000))
@@ -156,7 +158,11 @@ if __name__ == "__main__":
         
         cv2.imshow("MyVideo", combined)
         # video_shower.frame = combined
-        out.write(frame)
+        
+        # goto line 107 and used the corresponding video writer
+        # out.write(frame) 
+        out.write(combined)
+    
         end=int(round(time.time() * 1000)) - start
         print("FPS=",(1000.0/end))
         if cv2.waitKey(1) & 0xFF == ord('q') or video_getter.stopped:
